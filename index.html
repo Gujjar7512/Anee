@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anees × Anee ❤️</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ background:#090611;
+ color:white;
+ font-family:Georgia,serif;
+ text-align:center;
+ overflow-x:hidden;
+}
+#intro{
+ position:fixed;inset:0;z-index:20;
+ display:flex;flex-direction:column;
+ align-items:center;justify-content:center;
+ background:radial-gradient(circle,#482448,#090611 75%);
+ transition:1.3s;
+}
+#intro h1{font-size:clamp(38px,10vw,65px);color:#ffc5e5}
+#intro p{margin:18px;color:#e8cce0}
+button{
+ border:0;border-radius:30px;padding:14px 28px;
+ background:linear-gradient(90deg,#d75d9f,#7845b9);
+ color:white;font-size:16px;cursor:pointer;
+ box-shadow:0 0 22px #d75d9f66;
+}
+section{padding:75px 18px}
+.hero{
+ min-height:95vh;display:flex;
+ flex-direction:column;justify-content:center;
+ align-items:center;
+ background:radial-gradient(circle,#452344,#090611 75%);
+}
+.hero h1{
+ font-size:clamp(40px,10vw,70px);
+ color:#ffc5e5;text-shadow:0 0 25px #ed70c0;
+}
+.hero p{margin:15px}
+h2{color:#ffc5e5;font-size:30px;margin-bottom:25px}
+p{color:#e8d8e9;line-height:1.9}
+.card{
+ max-width:550px;margin:20px auto;padding:28px;
+ background:#ffffff0b;border:1px solid #ffffff25;
+ border-radius:24px;box-shadow:0 0 30px #a44b8c22;
+}
+.heart{font-size:48px;animation:pulse 1.5s infinite}
+@keyframes pulse{50%{transform:scale(1.2)}}
+
+/* Teddy Bear */
+.teddy{
+ font-size:85px;
+ display:inline-block;
+ animation:bounce 2s ease-in-out infinite;
+ filter:drop-shadow(0 0 15px #ff91ce);
+}
+@keyframes bounce{
+ 0%,100%{transform:translateY(0) rotate(-5deg)}
+ 50%{transform:translateY(-18px) rotate(5deg)}
+}
+
+/* Gallery */
+.gallery{
+ display:grid;grid-template-columns:1fr 1fr;
+ gap:13px;max-width:650px;margin:25px auto;
+}
+.photo{
+ overflow:hidden;border-radius:18px;
+ border:2px solid #e9a6d7;
+ box-shadow:0 0 20px #d45aa544;
+}
+.photo img{
+ width:100%;height:270px;
+ object-fit:cover;display:block;
+ cursor:pointer;transition:.5s;
+}
+.photo img:hover{transform:scale(1.06)}
+.photo p{padding:10px;color:#ffc5e5}
+
+/* Lightbox */
+#lightbox{
+ display:none;position:fixed;inset:0;
+ z-index:30;background:#000e;
+ align-items:center;justify-content:center;
+ padding:15px;
+}
+#lightbox img{
+ max-width:95%;max-height:85vh;
+ border-radius:15px;
+}
+#lightbox span{
+ position:absolute;top:20px;right:25px;
+ font-size:40px;cursor:pointer;
+}
+
+/* Floating hearts */
+.float{
+ position:fixed;bottom:-40px;
+ z-index:5;pointer-events:none;
+ animation:rise 7s linear forwards;
+}
+@keyframes rise{
+ to{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+
+/* Feedback */
+textarea{
+ width:100%;height:120px;
+ margin:15px 0;padding:15px;
+ border-radius:15px;border:1px solid #bd79ad;
+ background:#170f20;color:white;
+ font-size:16px;resize:vertical;
+}
+select{
+ padding:12px;width:100%;
+ border-radius:12px;background:#170f20;
+ color:white;border:1px solid #bd79ad;
+ margin:12px 0;
+}
+#thanks{display:none;color:#ffc5e5;margin-top:20px}
+footer{padding:35px;color:#d9b6d3}
+
+@media(max-width:450px){
+ .photo img{height:210px}
+ section{padding:60px 14px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- CINEMATIC INTRO -->
+<div id="intro">
+ <div class="heart">❤️</div>
+ <h1>Anees × Anee</h1>
+ <p>Every friendship has a beautiful story...</p>
+ <button onclick="start()">Enter Our World ✨</button>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+ <p>✦ A BEAUTIFUL FRIENDSHIP ✦</p>
+ <h1>Anees × Anee</h1>
+ <p>Two Names • One Beautiful Story ❤️</p>
+ <div class="teddy">🧸</div>
+ <p>Scroll Down For Our Memories ↓</p>
+</section>
+
+<!-- FRIENDSHIP -->
+<section>
+ <h2>Our Friendship ❤️</h2>
+ <div class="card">
+  <div class="heart">💗</div>
+  <p>
+   Some people enter our lives and make
+   ordinary moments unforgettable.
+   Friendship is not about being together
+   every second, it's about caring,
+   understanding and respecting each other.
+  </p>
+  <h2 style="margin-top:20px">Anees × Anee</h2>
+  <p>Best Friends Forever ♾️</p>
+ </div>
+</section>
+
+<!-- TEDDY -->
+<section>
+ <h2>A Little Teddy For You 🧸</h2>
+ <div class="card">
+  <div class="teddy">🧸</div>
+  <p>
+   Sending you a little teddy,
+   lots of happiness and endless smiles!
+  </p>
+  <div class="heart">💕</div>
+ </div>
+</section>
+
+<!-- EXACTLY TWO PHOTOS -->
+<section>
+ <h2>Our Special Memories 📸</h2>
+ <p>Two Pictures • Beautiful Memories</p>
+
+ <div class="gallery">
+  <div class="photo">
+   <img src="1000451050.jpg"
+   alt="Anees and Anee memory"
+   onclick="showPhoto(this.src)">
+   <p>Memory One ❤️</p>
+  </div>
+
+  <div class="photo">
+   <img src="1000434655.jpg"
+   alt="Anees and Anee memory"
+   onclick="showPhoto(this.src)">
+   <p>Memory Two 💗</p>
+  </div>
+ </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closePhoto()">
+ <span>×</span>
+ <img id="largePhoto" src="" alt="Full size memory">
+</div>
+
+<!-- SPECIAL MESSAGE -->
+<section>
+ <h2>A Special Message 💌</h2>
+ <div class="card">
+  <p>
+   Dear Anee 🥰
+   <br><br>
+   Always keep smiling.
+   May your days be full of happiness,
+   beautiful memories and success.
+   <br><br>
+   No matter how life changes,
+   always remember the beautiful
+   moments of friendship.
+   <br><br>
+   Lots of good wishes ❤️
+  </p>
+  <h2 style="margin-top:20px">From Anees</h2>
+ </div>
+</section>
+
+<!-- FEEDBACK -->
+<section>
+ <h2>Your Feedback 💌</h2>
+ <div class="card">
+  <div style="font-size:55px">🎁</div>
+  <p>So Anee, how did you like this little surprise?</p>
+
+  <form id="feedbackForm">
+   <select id="rating" required>
+    <option value="">Choose your rating</option>
+    <option>😍 Amazing</option>
+    <option>🥰 Very Beautiful</option>
+    <option>❤️ Loved It</option>
+    <option>😊 Nice</option>
+   </select>
+
+   <textarea id="reply"
+   placeholder="Write your sweet feedback here..."
+   required></textarea>
+
+   <button type="submit">Send Feedback 💗</button>
+  </form>
+
+  <div id="thanks">
+   <h2>Thank You Anee! ❤️</h2>
+   <p>Your feedback has been recorded on this page.</p>
+   <div class="heart">🧸</div>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="heart">❤️</div>
+ <h2>Anees × Anee</h2>
+ A Friendship Story Forever ♾️
+ <p>Made With Love By Anees</p>
+</footer>
+
+<script>
+function start(){
+ const intro=document.getElementById('intro');
+ intro.style.opacity='0';
+ setTimeout(()=>intro.style.display='none',1300);
+}
+
+function showPhoto(src){
+ document.getElementById('largePhoto').src=src;
+ document.getElementById('lightbox').style.display='flex';
+}
+function closePhoto(){
+ document.getElementById('lightbox').style.display='none';
+}
+
+function hearts(){
+ const h=document.createElement('div');
+ h.className='float';
+ h.innerHTML=['❤️','💕','💗','✨','🌸'][Math.floor(Math.random()*5)];
+ h.style.left=Math.random()*100+'vw';
+ h.style.fontSize=(18+Math.random()*20)+'px';
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),7000);
+}
+setInterval(hearts,800);
+
+document.getElementById('feedbackForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ document.getElementById('thanks').style.display='block';
+ this.style.display='none';
+});
+</script>
+
+</body>
+</html>
